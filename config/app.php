@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Facade;
 
 return [
+    'landlord_domain' => env('LANDLORD_DOMAIN', 'schoolsite.test'),
 
     /*
     |--------------------------------------------------------------------------

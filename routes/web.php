@@ -4,8 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 // Landlord routes
-Route::name('landlord.')->domain('schoolsite.test')->group( function() {
-    //Route::get('/', \App\Http\Controllers\Landlord\WelcomeController::class )->name('welcome');
+Route::name('landlord.')->domain( config('app.landlord_domain'))->group( function() {
+    Route::get('/', \App\Http\Controllers\Landlord\WelcomeController::class )->name('welcome');
 });
 
 
