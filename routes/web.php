@@ -14,12 +14,16 @@ Route::name('landlord.')->domain( config('app.landlord_domain'))->group( functio
 Route::middleware('is_tenant')->group(function () {
     Route::get('/', \App\Http\Controllers\WelcomeController::class )->name('welcome');
 
+    Route::resource('blogs', \App\Http\Controllers\BlogController::class)->only(['index', 'show']);
+    Route::resource('infopages', \App\Http\Controllers\InfoPageController::class)->only(['index', 'show']);
+    Route::resource('schoolclass', \App\Http\Controllers\SchoolClassController::class)->only('index');
+
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
 
-    Route::resource('blogs', \App\Http\Controllers\BlogController::class);
-    Route::resource('infopages', \App\Http\Controllers\InfoPageController::class);
+
 
     Route::middleware('auth')->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

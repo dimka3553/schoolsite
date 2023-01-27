@@ -10,7 +10,7 @@
     <div class="mainlinks">
         <div class="flex items-center gap-[24px]">
             <div class="text-[#0066ff] text-[16px] ">
-                <a href="#">Classes</a>
+                <a href="{{route('schoolclass.index')}}">Classes</a>
             </div>
             <div class="text-[#0066ff] text-[16px] ">
                 <a href="{{route('blogs.index')}}">Blog</a>
