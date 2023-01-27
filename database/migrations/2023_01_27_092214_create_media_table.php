@@ -6,10 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
         Schema::create('media', function (Blueprint $table) {
-//            $table->foreignId('tenant_id');
             $table->bigIncrements('id');
 
             $table->morphs('model');
@@ -29,10 +28,5 @@ return new class extends Migration
 
             $table->nullableTimestamps();
         });
-    }
-
-    public function down()
-    {
-        Schema::dropIfExists('media');
     }
 };
