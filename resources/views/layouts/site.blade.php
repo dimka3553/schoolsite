@@ -23,7 +23,7 @@
     <body class="antialiased bg-gray-50">
         <x-navigation/>
         <div class="flex-col h-full">
-            <div class="px-5">
+            <div class="">
                 {{ $slot }}
             </div>
             <x-footer/>
