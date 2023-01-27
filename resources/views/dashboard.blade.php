@@ -11,6 +11,18 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>
+
+                <ul class="p-6 list-disc ml-5">
+                    @foreach(($users = App\Models\User::get()) as $user)
+                        <li>
+                            <span>{{$user->id}} [{{$user->tenant_id}}]</span>
+                            <span>{{ $user->name }}</span>
+                            <span>{{ $user->email }}</span>
+                        </li>
+
+                    @endforeach
+
+                </ul>
             </div>
         </div>
     </div>

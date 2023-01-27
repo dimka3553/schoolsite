@@ -15,23 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Tenant::create([
-            'name' => 'schAAl',
-            'code' => 'school_a',
-            'subdomain' => 'aa',
-            ]);
-
-        Tenant::create([
-            'name' => 'schooBB',
-            'code' => 'school_b',
-            'subdomain' => 'bb',
+        $this->call([
+            TenantSeeder::class,
+            UserSeeder::class,
         ]);
 
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }
