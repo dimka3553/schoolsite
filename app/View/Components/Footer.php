@@ -2,18 +2,19 @@
 
 namespace App\View\Components;
 
+use App\Models\InfoPage;
+use App\Models\SchoolClass;
 use Illuminate\View\Component;
 
-class footer extends Component
+class Footer extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    public $classes;
+    public $infopages;
+
     public function __construct()
     {
-        //
+        $this->classes = SchoolClass::all();
+        $this->infopages = Infopage::all();
     }
 
     /**
