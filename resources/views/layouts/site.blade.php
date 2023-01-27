@@ -19,6 +19,7 @@
                 font-family: 'DM Sans', sans-serif;
             }
         </style>
+        @livewireStyles
     </head>
     <body class="antialiased bg-gray-50">
         <x-navigation/>
@@ -26,7 +27,9 @@
             <div class="">
                 {{ $slot }}
             </div>
+            <livewire:contact-form/>
             <x-footer/>
         </div>
+        @livewireScripts
     </body>
 </html>
