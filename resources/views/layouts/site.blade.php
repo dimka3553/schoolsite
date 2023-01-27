@@ -27,9 +27,11 @@
             <div class="">
                 {{ $slot }}
             </div>
+
             <livewire:contact-form/>
             <x-footer/>
         </div>
+
         @livewireScripts
     </body>
 </html>
