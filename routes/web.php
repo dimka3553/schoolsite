@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormInputController;
 
 // Landlord routes
 Route::name('landlord.')->domain( config('app.landlord_domain'))->group( function() {
     Route::get('/', \App\Http\Controllers\Landlord\WelcomeController::class )->name('welcome');
 });
 
+//Form input route post
+Route::post('/form-input', [FormInputController::class, 'store'])->name('form-input.store');
 
 
 // Tenant routes
